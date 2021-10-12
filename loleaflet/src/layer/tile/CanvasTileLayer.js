@@ -2536,6 +2536,16 @@ L.CanvasTileLayer = L.Layer.extend({
 			}
 		}
 
+		viewInfo = this._map._viewInfo[this._viewId];
+		if (!this._map.infobar &&
+		    L.Map.Infobar &&
+		    viewInfo &&
+		    viewInfo.userextrainfo &&
+		    viewInfo.userextrainfo.is_admin) {
+			this._map.addHandler('infobar', L.Map.Infobar);
+			this._map.infobar.enable();
+		}
+
 		// Sending postMessage about View_Added / View_Removed is
 		// deprecated, going forward we prefer sending the entire information.
 		this._map.fire('updateviewslist');
