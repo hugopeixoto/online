@@ -366,6 +366,7 @@ if ENABLE_FEEDBACK
 LOLEAFLET_JS_LST +=\
 	src/control/IFrameInfobar.js \
 	src/control/IFrameDialog.js \
+	src/map/handler/Map.Infobar.js \
 	src/map/handler/Map.Feedback.js
 endif
 
